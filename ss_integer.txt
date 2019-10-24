@@ -1,0 +1,87 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	char pick;
+	int num;
+	int A;
+	//int A[];
+	const char segments[10][3][3] = { {{' ', '_', ' '}, {'|', ' ', '|'}, {'|', '_', '|'} } , {{' ', ' ', ' '}, {' ', ' ', '|'}, {' ', ' ', '|'}}, {{' ', '_', ' '}, {' ', '_', '|'}, {'|', '_', ' '}},{{' ', '_', ' '}, {' ', '_', '|'}, {' ', '_', '|'}}, {{' ', ' ', ' '}, {'|', '_', '|'}, {' ', ' ', '|'}}, {{' ', '_', ' '}, {'|', '_', ' '}, {' ', '_', '|'}}, {{' ', '_', ' '}, {'|', '_', ' '}, {'|', '_', '|'}}, {{' ', '_', ' '}, {' ', ' ', '|'}, {' ', ' ', '|'}}, {{' ', '_', ' '}, {'|', '_', '|'}, {'|', '_', '|'}}, {{' ', '_', ' '}, {'|', '_', '|'}, {' ', '_', '|'}} };
+	printf("Y for continue and N for quit");
+	scanf(" %c", &pick);
+	if (pick == 'Y') {
+		int dig;
+		int i = 0;
+		int T[100];
+		printf("type an integer:");
+		scanf("%d", &dig);
+		int count = 0;
+		while (dig > 0)
+		{
+			i = dig % 10;   // get digit one by one
+			T[count] = i;
+			count++;
+
+			dig = dig / 10;  // traversal every digital position
+		}
+		//printf(T);            // Check the Array
+		//printf(" %d",count);  // check the length
+		int a,b,c;
+		for(int c = 0; c < 3;c++) {// every row to print
+
+			for (int a = 0; a < count; a++) {// get the digit to print
+
+				for (int b = 0; b < 3; b++) {// print evert colum
+					printf("%c",segments[T[count - a - 1]][c][b]); // print segement in the order of the three for loops
+					
+				}
+
+			}
+		
+			
+		printf("\n");
+		
+		}
+
+	}
+	else {
+		printf("OH!SeeYa!");
+	}
+}
+/*
+int main() {
+	int A[] = { longTodigit() };
+	int V;
+	V=sizeof(A)/sizeof(int);
+	printf(" %d", V);
+	
+	
+}
+int length(int Array) {
+
+
+}
+int longTodigit()
+{
+	int dig;
+	int i = 0;
+	int T[100];
+	printf("type an integer:");
+	scanf("%d", &dig);
+	int count = 0;
+	while (dig > 0)
+	{
+		i = dig % 10;//?????????   321/10=32.1
+
+		printf("%d\n", i);//???????
+		T[count] = i; 
+		count++;
+
+		dig = dig / 10;//??????????
+	}
+	return T;
+	printf(T);   // T[[1],[2],[3]]
+	system("pause");
+}
+*/
